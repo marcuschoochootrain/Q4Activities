@@ -12,20 +12,20 @@
 
 	<script>
 		const D = new Date();
-		document.getElementById ('DT').innerHTML = D;
-
+		document.getElementById('DT').innerHTML = D;
 	</script>
+	
 	<form>
-		Enter Fahrenheit:<input type="text" id="num1">
-		
-		<button type="submit" onclick="Calculate()">Calculate</button>
-</form>
-<script>
-	function Convert(){
+		Enter Fahrenheit: <input type="text" id="num1">
+		<button type="button" onclick="Convert()">Convert</button>
+	</form>
+	
+	<script>
+		function Convert() {
 			let Fah = document.getElementById("num1").value;
-			let Cel = (num1 * -17.222222)
-			window.alert("Value in Fahrenheit :" + Fah)}
-		</script>
-
+			let Cel = (Fah - 32) * 5/9;
+			window.alert("Value in Celsius: " + Cel);
+		}
+	</script>
 </body>
 </html>
