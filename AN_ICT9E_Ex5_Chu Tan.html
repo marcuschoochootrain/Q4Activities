@@ -1,58 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Golos+Text&family=Open+Sans:ital@1&family=Roboto+Condensed:ital,wght@0,300;0,700;1,300;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <style type="text/css">
-    	img{ 
-    		width: 150px;
-    	 }
-    </style>
-	<title>Exercise 5</title>
+<title>Length Conversion Calculator</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+}
+.container {
+margin: 20px auto;
+max-width: 300px;
+}
+label {
+display: block;
+margin-bottom: 5px;
+}
+input[type="number"] {
+width: 100%;
+padding: 5px;
+margin-bottom: 10px;
+}
+input[type="submit"] {
+width: 100%;
+padding: 10px;
+background-color: #4CAF50;
+color: #fff;
+border: none;
+cursor: pointer;
+}
+p {
+font-weight: bold;
+margin-top: 20px;
+}
+</style>
 </head>
 <body>
-	<div class="container mt-3">
-		<h2>What makes the lightbulb light</h2>
-		<p>Light bulbs consist of only a few basic parts. The metal base has two metal contacts that connect to the ends of an electrical circuit. The metal contacts attach to two stiff wires, which themselves are connected by a thin metal filament. The filament is the thin wire you see in the middle of the light bulb, held up by a glass mount. All of this exists within a glass bulb filled with an inert gas, such as argon.</p>
-		<audio id="audio" src="electric-hum.mp3"></audio>
-		<button class="btn btn-success" onmouseover="On()">TURN ON</button>
-       <img src="OFF.gif" id="Bulb">
+<div class="container">
+<h2>Length Conversion Calculator</h2>
+<label for="input">Enter length in meters:</label>
+<input type="number" id="input" placeholder="Enter length in meters">
+<input type="submit" value="Convert" onclick="convertLength()">
+<p id="result"></p>
+</div>
 
-       <script type="text/javascript">
-       	function On(){
-       		document.getElementById('Bulb').src = "ON.gif";
-       		document.getElementById('audio').play();
-       		 }
-       		 function off(){
-       		 	document.getElementById('Bulb').src = "OFF.gif"
-       		 	document.getElementById('audio').pause();
-       		 }
-   </script>
-
-        <p>Source: <a href="https://www.wonderopolis.org/wonder/what-makes-a-light-bulb-light-up">
-        	https://www.wonderopolis.org/wonder/what-makes-a-light-bulb-light-up
-        </a></p>
-    </div>
-    <img src="fig1.png" align="0"><img src="fig2.png">
-    <div class="container">
-		Enter Voltage (E): <input type="text" id="V" class="form-control"><br>
-		Enter Resistance (R): <input type="text" id="R" class="form-control"><br>
-		<input type="submit" name="COMPUTE" class="btn btn-light" onclick="Compute()">
-		<p id="Output"></p>
-	</div>
-	<script type="text/javascript">
-		function Compute(){
-			let Voltage = document.getElementById('V').value;
-			let Resistance = document.getElementById('R').value;
-			let Current = Voltage/Resistance;
-			document.getElementById('Output').innerHTML = "The Current (I) is:" + Current;
-		}
-	</script>
-
-
-</body>
-</html>
+<script>
+function convertLength() {
+// Get the input v
